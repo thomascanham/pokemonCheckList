@@ -49,6 +49,12 @@ const GlobalStyles = createGlobalStyle`
     p {
         color: var(--font-color);
     }
+
+    .container {
+      width: 95%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 `;
 
 export default function Page({ children }) {
