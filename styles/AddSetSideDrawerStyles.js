@@ -57,6 +57,7 @@ export const AddSetButton = styled.button`
   align-items: center;
   cursor: pointer;
   span {
-    margin-right: 20px;
+    margin-right: 15px;
+    display: flex;
   }
 `;

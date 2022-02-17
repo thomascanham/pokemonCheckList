@@ -16,6 +16,8 @@ const GlobalStyles = createGlobalStyle`
         --font-color: #424242;
         --bg-color: #fff;
         --heading-color: #292922;
+
+        --box-shadow: rgb(224, 224, 224) 0px 2px 8px 0px;
         box-sizing: border-box;
         font-size: 16px;
     }

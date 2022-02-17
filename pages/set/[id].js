@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import SingleCard from '../../components/SingleCard';
 
+const CardPageStyles = styled.div`
+  padding-top: 60px;
+`;
+
 const CardsGrid = styled.div`
   position: relative;
   max-width: 100%;
@@ -18,19 +22,21 @@ const CardsGrid = styled.div`
 export default function SetPage({ cards, set }) {
   const orderedCards = cards.data.sort((a, b) => a.number - b.number);
   return (
-    <div className="container">
-      <h1>{set.name}</h1>
+    <CardPageStyles>
+      <div className="container">
+        <h2>{set.name}</h2>
 
-      <CardsGrid>
-        {orderedCards.map((card) => (
-          <SingleCard
-            key={card.id}
-            name={card.name}
-            image={card.images.large}
-          />
-        ))}
-      </CardsGrid>
-    </div>
+        <CardsGrid>
+          {orderedCards.map((card) => (
+            <SingleCard
+              key={card.id}
+              name={card.name}
+              image={card.images.large}
+            />
+          ))}
+        </CardsGrid>
+      </div>
+    </CardPageStyles>
   );
 }
 

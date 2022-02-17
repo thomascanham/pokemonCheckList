@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import Image from 'next/image';
+import { AiOutlineCloseCircle } from 'react-icons/ai';
 import {
   AddSetButton,
   SideDrawerStyes,
@@ -16,8 +17,7 @@ export default function AddSetSideDrawer({ sets, click, shown, addSet }) {
   return (
     <SideDrawerStyes className={classes}>
       <span onClick={click} className="close">
-        {' '}
-        X{' '}
+        <AiOutlineCloseCircle />
       </span>
 
       <div className="drawer--heading">
@@ -36,12 +36,14 @@ export default function AddSetSideDrawer({ sets, click, shown, addSet }) {
                   click();
                 }}
               >
-                <Image
-                  width="20"
-                  height="20"
-                  src={set.images.symbol}
-                  alt={set.name}
-                />
+                <span>
+                  <Image
+                    width="20"
+                    height="20"
+                    src={set.images.symbol}
+                    alt={set.name}
+                  />
+                </span>
                 {set.name}
               </AddSetButton>
             </li>
