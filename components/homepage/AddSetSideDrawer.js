@@ -6,7 +6,7 @@ import {
   SideDrawerStyes,
 } from '../../styles/AddSetSideDrawerStyles';
 
-export default function AddSetSideDrawer({ sets, click, shown }) {
+export default function AddSetSideDrawer({ sets, click, shown, addSet }) {
   const setList = sets.sort(
     (a, b) => moment(b.releaseDate) - moment(a.releaseDate)
   );
@@ -28,8 +28,14 @@ export default function AddSetSideDrawer({ sets, click, shown }) {
       <div className="drawer--list">
         <ul>
           {setList.map((set) => (
-            <ul>
-              <AddSetButton type="button" onClick={click}>
+            <li key={`sidedrawer-${set.id}`}>
+              <AddSetButton
+                type="button"
+                onClick={() => {
+                  addSet(set);
+                  click();
+                }}
+              >
                 <Image
                   width="20"
                   height="20"
@@ -38,7 +44,7 @@ export default function AddSetSideDrawer({ sets, click, shown }) {
                 />
                 {set.name}
               </AddSetButton>
-            </ul>
+            </li>
           ))}
         </ul>
       </div>
@@ -50,4 +56,5 @@ AddSetSideDrawer.propTypes = {
   sets: PropTypes.array.isRequired,
   click: PropTypes.func.isRequired,
   shown: PropTypes.bool.isRequired,
+  addSet: PropTypes.func.isRequired,
 };

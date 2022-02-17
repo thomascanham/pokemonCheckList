@@ -15,6 +15,9 @@ const SetCardStyles = styled.div`
   }
 `;
 
+// TODO
+// Would like to get this using next image component, But i cant seem to get it working right now
+
 export default function SetCard({ image, name, id }) {
   return (
     <SetCardStyles>
