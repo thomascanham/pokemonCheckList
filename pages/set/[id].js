@@ -21,6 +21,7 @@ const CardsGrid = styled.div`
 
 export default function SetPage({ cards, set }) {
   const orderedCards = cards.data.sort((a, b) => a.number - b.number);
+
   return (
     <CardPageStyles>
       <div className="container">

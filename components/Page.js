@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { createGlobalStyle } from 'styled-components';
 import Header from './Header';
+import 'react-toastify/dist/ReactToastify.css';
 
 const GlobalStyles = createGlobalStyle`
     @font-face {
@@ -10,14 +11,16 @@ const GlobalStyles = createGlobalStyle`
         font-style: normal;
     }
 
-    html {
-        --primary-color: #302AE6;
+    :root {
+      --primary-color: #302AE6;
         --secondary-color: #536390;
         --font-color: #424242;
         --bg-color: #fff;
         --heading-color: #292922;
 
         --box-shadow: rgb(224, 224, 224) 0px 2px 8px 0px;
+    }
+    html {
         box-sizing: border-box;
         font-size: 16px;
     }
@@ -31,6 +34,9 @@ const GlobalStyles = createGlobalStyle`
         font-size: 1rem;
         line-height: 2;
         background: var(--bg-color);
+    }
+    button {
+      font-family: 'radnika_next';
     }
     h1, h2, h3, h4, h5, h6 {
         color: var(--heading-color);
@@ -51,6 +57,10 @@ const GlobalStyles = createGlobalStyle`
     h5 {font-size: 1.25rem;}
     p {
         color: var(--font-color);
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     .container {

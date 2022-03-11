@@ -1,11 +1,19 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import { MdCatchingPokemon } from 'react-icons/md';
+import Nav from './Nav';
 
 const HeaderStyles = styled.header`
   width: 100%;
-  padding: 30px 0;
+  padding: 10px 0;
   box-shadow: var(--box-shadow);
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   h1 {
     margin: 0;
     padding: 0;
@@ -27,7 +35,7 @@ const HeaderStyles = styled.header`
 export default function Header() {
   return (
     <HeaderStyles>
-      <div className="container">
+      <div className="container flex">
         <Link href="/" passHref>
           <h1>
             <span>
@@ -36,6 +44,8 @@ export default function Header() {
             Tom's Pokemon App
           </h1>
         </Link>
+
+        <Nav />
       </div>
     </HeaderStyles>
   );
